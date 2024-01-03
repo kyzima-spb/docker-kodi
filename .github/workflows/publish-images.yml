@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - .github/workflows/publish-image.yml
+      - .github/workflows/publish-images.yml
       - docker/**
 
 env:
@@ -33,7 +33,7 @@ jobs:
             ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}
           tags: |
             ${{ matrix.release }}
-            flavor: |
+          flavor: |
             latest=${{ matrix.release == 'bookworm-slim' }}
       -
         name: Set up Docker Buildx
