@@ -15,3 +15,6 @@ RUN set -ex \
 COPY ./root /
 
 USER user
+
+RUN set -ex \
+    && mkdir -p /home/user/.kodi/addons
